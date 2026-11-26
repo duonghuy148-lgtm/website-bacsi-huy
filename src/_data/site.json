@@ -2,7 +2,7 @@
   "url": "https://bsduongmanhuy.com",
   "doctorName": "BS. Dương Mạnh Huy",
   "shortName": "BS. Mạnh Huy",
-  "title": "Bác sĩ Sản phụ khoa",
+  "title": "Bác sĩ Chuyên khoa I Sản phụ khoa",
   "hospital": "Bệnh viện Phụ sản Trung ương",
   "hospitalShort": "BV Phụ sản TW",
   "clinicName": "[Tên phòng khám tư]",
@@ -10,9 +10,9 @@
   "mapLink": "",
   "phone": "[09xx xxx xxx]",
   "zalo": "",
-  "facebook": "",
+  "facebook": "https://www.facebook.com/dr.manhhuy",
   "email": "[email liên hệ]",
-  "experienceYears": "[số]",
+  "experienceYears": "10",
   "licenseNumber": "[Số chứng chỉ hành nghề]",
   "clinicLicense": "[Số giấy phép hoạt động của phòng khám]",
   "tiktok": "https://www.tiktok.com/@bsmanhhuy.sanc",
@@ -48,19 +48,29 @@
       "close": ""
     }
   ],
-  "bio": "[Đoạn tiểu sử ngắn 3 đến 4 câu: quê quán, trường đào tạo, lý do chọn chuyên ngành Sản phụ khoa, phương châm làm nghề.]",
+  "bio": "Bác sĩ Chuyên khoa I Dương Mạnh Huy tốt nghiệp Đại học Y Hà Nội và công tác tại Bệnh viện Phụ sản Trung ương từ năm 2016, hiện làm việc tại Khoa Điều trị theo yêu cầu. Bác sĩ chuyên về bệnh lý và phẫu thuật sản phụ khoa, đã tham gia nhiều khóa đào tạo chuyên sâu về sản phụ khoa, vô sinh và hỗ trợ sinh sản. Năm 2018, bác sĩ tham gia Dự án 585 đưa bác sĩ trẻ về vùng khó khăn, công tác tại Bệnh viện Đa khoa huyện Bảo Lạc, Cao Bằng.",
   "timeline": [
     {
-      "year": "[năm]",
-      "text": "Tốt nghiệp Bác sĩ Đa khoa, [Trường Đại học Y]"
+      "year": "2015",
+      "text": "Tốt nghiệp Bác sĩ Đa khoa, Đại học Y Hà Nội"
     },
     {
-      "year": "[năm]",
-      "text": "Bác sĩ Chuyên khoa / Thạc sĩ Sản phụ khoa, [nơi đào tạo]"
+      "year": "2016",
+      "text": "Bác sĩ Sản phụ khoa, Bệnh viện Phụ sản Trung ương"
     },
     {
-      "year": "[năm]",
-      "text": "Công tác tại Bệnh viện Phụ sản Trung ương"
+      "year": "2018",
+      "text": "Tốt nghiệp Bác sĩ Chuyên khoa I Sản phụ khoa, Đại học Y Hà Nội"
+    },
+    {
+      "year": "2018",
+      "text": "Tham gia Dự án 585, công tác tại Bệnh viện Đa khoa huyện Bảo Lạc, Cao Bằng: thực hiện 72 kỹ thuật chuyên môn, chuyển giao 6 kỹ thuật cho bệnh viện huyện",
+      "link": "https://baochinhphu.vn/bac-si-tre-noi-vung-cao-102243193.htm",
+      "linkText": "Báo Chính phủ đưa tin"
+    },
+    {
+      "year": "Hiện nay",
+      "text": "Bác sĩ Khoa Điều trị theo yêu cầu, Bệnh viện Phụ sản Trung ương"
     }
   ],
   "categories": [
@@ -102,5 +112,12 @@
       "url": "",
       "thumb": ""
     }
+  ],
+  "degree": "Bác sĩ Chuyên khoa I",
+  "department": "Khoa Điều trị theo yêu cầu",
+  "awards": [
+    "2 lần nhận Bằng khen của Bộ trưởng Bộ Y tế",
+    "Bằng khen của Chủ tịch Thành phố",
+    "Bằng khen của Công đoàn Y tế Việt Nam"
   ]
 }

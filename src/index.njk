@@ -6,15 +6,15 @@ layout: base.njk
 <section class="hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Bác sĩ Sản phụ khoa · {{ site.hospital }}</p>
+      <p class="eyebrow">{{ site.degree }} Sản phụ khoa · {{ site.hospital }}</p>
       <h1 style="margin-top:.6rem">Đồng hành cùng mẹ <em>từ khi mang thai</em> đến từng ca phẫu thuật phụ khoa</h1>
-      <p class="lead">{{ site.doctorName }} trực tiếp khám, theo dõi thai kỳ và tư vấn phẫu thuật phụ khoa. Mỗi buổi khám đều được giải thích rõ ràng để chị em hiểu tình trạng của mình và cùng bác sĩ quyết định.</p>
+      <p class="lead">{{ site.doctorName }}, {{ site.department }}, {{ site.hospital }}, trực tiếp khám, theo dõi thai kỳ và tư vấn phẫu thuật phụ khoa. Mỗi buổi khám đều được giải thích rõ ràng để chị em hiểu tình trạng của mình và cùng bác sĩ quyết định.</p>
       <div class="cta">
         <a class="btn" href="#dat-lich">Đăng ký khám</a>
         <a class="btn zalo-btn" href="{{ zaloHref }}">Nhắn Zalo tư vấn miễn phí</a>
       </div>
       <div class="trust">
-        <span>Bác sĩ trực tiếp khám</span><span>Tư vấn online miễn phí</span><span>Giải thích rõ từng kết quả</span>
+        <span>Bác sĩ CKI · Đại học Y Hà Nội</span><span>Bác sĩ trực tiếp khám</span><span>Tư vấn online miễn phí</span><span>Giải thích rõ từng kết quả</span>
       </div>
     </div>
     <div class="photo">
@@ -157,14 +157,15 @@ layout: base.njk
     <div>
       <p class="eyebrow">Về bác sĩ</p>
       <h2 style="margin-top:.4rem">{{ site.doctorName }}</h2>
-      <p style="color:var(--muted);margin-top:.6rem">Bác sĩ Sản phụ khoa, {{ site.hospital }}</p>
+      <p style="color:var(--muted);margin-top:.6rem">{{ site.degree }} Sản phụ khoa<br>{{ site.department }}, {{ site.hospital }}</p>
     </div>
     <div class="text">
       <p>{{ site.bio | ph | safe }}</p>
       <ul class="cv">
-        {% for t in site.timeline %}<li><b>{{ t.year | ph | safe }}</b><span>{{ t.text | ph | safe }}</span></li>
+        {% for t in site.timeline %}<li><b>{{ t.year | ph | safe }}</b><span>{{ t.text | ph | safe }}{% if t.link %} · <a href="{{ t.link }}" target="_blank" rel="noopener">{{ t.linkText }}</a>{% endif %}</span></li>
         {% endfor %}
       </ul>
+      {% if site.awards %}<div class="awards"><b>Khen thưởng</b><ul>{% for a in site.awards %}<li>{{ a }}</li>{% endfor %}</ul></div>{% endif %}
     </div>
   </div>
 </section>

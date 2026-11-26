@@ -36,7 +36,7 @@
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="/"><span class="mark">MH</span><span><b>{{ site.doctorName }}</b><small>Sản phụ khoa · {{ site.hospitalShort }}</small></span></a>
+    <a class="brand" href="/"><span class="mark">MH</span><span><b>{{ site.doctorName }}</b><small>CKI Sản phụ khoa · {{ site.hospitalShort }}</small></span></a>
     <nav class="nav" id="nav" aria-label="Mục lục">
       <a href="/">Trang chủ</a>
       <a href="/#gioi-thieu">Về bác sĩ</a>
@@ -67,7 +67,7 @@
     <div class="fcols">
       <div>
         <a class="brand" href="/"><span class="mark">MH</span><span><b>{{ site.doctorName }}</b><small>{{ site.title }}</small></span></a>
-        <p style="margin-top:.9rem;max-width:34ch">Công tác tại {{ site.hospital }}. Theo dõi thai kỳ, tư vấn phẫu thuật phụ khoa, tư vấn online miễn phí.</p>
+        <p style="margin-top:.9rem;max-width:34ch">{{ site.department }}, {{ site.hospital }}. Theo dõi thai kỳ, tư vấn phẫu thuật phụ khoa, tư vấn online miễn phí.</p>
       </div>
       <div><h4>Chuyên mục</h4><ul>{% for c in site.categories %}<li><a href="/chuyen-muc/{{ c.slug }}/">{{ c.name }}</a></li>{% endfor %}</ul></div>
       <div><h4>Liên kết nhanh</h4><ul><li><a href="/#dat-lich">Đăng ký khám</a></li><li><a href="/#cong-cu">Tính ngày dự sinh</a></li><li><a href="/#cong-cu">Tính ngày rụng trứng</a></li><li><a href="/bai-viet/">Tất cả bài viết</a></li></ul></div>
