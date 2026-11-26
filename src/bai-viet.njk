@@ -4,14 +4,12 @@ title: Bài viết
 permalink: /bai-viet/
 description: Kiến thức thai sản và phụ khoa từ bác sĩ, viết dễ hiểu cho chị em.
 ---
+{% from "card.njk" import card %}
 <section>
   <div class="wrap">
-    <p class="eyebrow">Kiến thức y khoa</p>
-    <h1 style="font-size:clamp(1.9rem,4.5vw,2.6rem);margin-top:.5rem">Bài viết</h1>
-    <div class="posts">
-      {% for post in collections.posts %}
-      <article class="post"><span class="meta">{{ post.data.category }} · {{ post.date | ngay }}</span><h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3><p>{{ post.data.description }}</p><a href="{{ post.url }}">Đọc bài</a></article>
-      {% endfor %}
-    </div>
+    <nav class="crumb"><a href="/">Trang chủ</a><span>›</span><span>Bài viết</span></nav>
+    <div class="sec-head" style="margin-top:1rem"><div><h1 style="font-size:clamp(1.9rem,4.5vw,2.5rem)">Tất cả bài viết</h1></div></div>
+    <div class="quick" style="padding-block:0 1.6rem;border:0"><div style="display:flex;flex-wrap:wrap;gap:.5rem">{% for c in site.categories %}<a class="chip" href="/chuyen-muc/{{ c.slug }}/">{{ c.name }} ({{ (collections.posts | byCategory(c.name)).length }})</a>{% endfor %}</div></div>
+    <div class="cards">{% for post in collections.posts %}{{ card(post, site.categories) }}{% endfor %}</div>
   </div>
 </section>

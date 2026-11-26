@@ -18,6 +18,13 @@ export default function (eleventyConfig) {
     const t = String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;");
     return t.replace(/\[[^\]]*\]/g, (m) => `<span class="ph">${m}</span>`);
   });
+  eleventyConfig.addFilter("readingTime", (html) => {
+    const words = String(html || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 200));
+  });
+  eleventyConfig.addFilter("byCategory", (posts, name) => posts.filter((p) => p.data.category === name));
+  eleventyConfig.addFilter("catSlug", (name, cats) => (cats.find((c) => c.name === name) || {}).slug || "");
+  eleventyConfig.addFilter("without", (posts, url) => posts.filter((p) => p.url !== url));
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
 
   return {

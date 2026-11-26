@@ -4,31 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if title %}{{ title }} | {% endif %}{{ site.doctorName }} – {{ site.title }}</title>
-<meta name="description" content="{{ description or ('Bác sĩ Sản phụ khoa tại ' + site.hospital + '. Theo dõi thai kỳ, tư vấn phẫu thuật phụ khoa, tư vấn online miễn phí.') }}">
+<meta name="description" content="{{ description or (site.doctorName + ', bác sĩ Sản phụ khoa tại ' + site.hospital + '. Theo dõi thai kỳ, tư vấn phẫu thuật phụ khoa, tư vấn online miễn phí.') }}">
+<meta name="theme-color" content="#138a78">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <meta property="og:title" content="{{ title or (site.doctorName + ' – ' + site.title) }}">
 <meta property="og:description" content="{{ description or site.hospital }}">
 <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{% if image %}<meta property="og:image" content="{{ site.url }}{{ image }}">{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Physician","name":{{ site.doctorName | dump | safe }},"medicalSpecialty":"Obstetric","url":{{ site.url | dump | safe }},"address":{"@type":"PostalAddress","streetAddress":{{ site.clinicAddress | dump | safe }},"addressCountry":"VN"}}
 </script>
 </head>
 <body>
+{% set zaloHref %}{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}/#dat-lich{% endif %}{% endset %}
+<div class="topbar">
+  <div class="wrap">
+    <div class="left">
+      <span class="addr">{{ site.clinicAddress | ph | safe }}</span>
+      <span>Hotline: {{ site.phone | ph | safe }}</span>
+    </div>
+    <div class="left">
+      {% if site.hoursConfirmed %}<span class="status" id="openStatus" data-hours='{{ site.hours | dump }}'><i></i><span>Giờ khám hôm nay</span></span>{% endif %}
+      <a href="{{ zaloHref }}">Nhắn Zalo phòng khám</a>
+    </div>
+  </div>
+</div>
+
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="/">{{ site.doctorName }}</a>
-    <nav class="nav" aria-label="Mục lục">
-      <a href="/#gioi-thieu">Giới thiệu</a>
+    <a class="brand" href="/"><span class="mark">MH</span><span><b>{{ site.doctorName }}</b><small>Sản phụ khoa · {{ site.hospitalShort }}</small></span></a>
+    <nav class="nav" id="nav" aria-label="Mục lục">
+      <a href="/">Trang chủ</a>
+      <a href="/#gioi-thieu">Về bác sĩ</a>
       <a href="/#dich-vu">Dịch vụ</a>
-      <a href="/#kham-thai">Mốc khám thai</a>
-      <a href="/bai-viet/">Bài viết</a>
-      <a href="/#dat-lich">Đặt lịch</a>
+      <div class="dd">
+        <button type="button" aria-haspopup="true">Chuyên mục ▾</button>
+        <div class="dd-menu">
+          <a href="/bai-viet/">Tất cả bài viết</a>
+          {% for c in site.categories %}<a href="/chuyen-muc/{{ c.slug }}/">{{ c.name }}</a>{% endfor %}
+        </div>
+      </div>
+      <a href="/#cong-cu">Công cụ</a>
+      <a href="/#dat-lich">Liên hệ</a>
     </nav>
-    <a class="btn" href="/#dat-lich">Đặt lịch khám</a>
+    <div style="display:flex;gap:.5rem;align-items:center">
+      <a class="btn hide-sm" href="/#dat-lich">Đăng ký khám</a>
+      <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false">Menu</button>
+    </div>
   </div>
 </header>
 
@@ -38,12 +64,27 @@
 
 <footer>
   <div class="wrap">
-    <strong style="color:var(--ink)">{{ site.doctorName }} · Sản phụ khoa</strong>
-    <p class="disclaim">Thông tin trên website mang tính tham khảo, không thay thế cho việc thăm khám và chẩn đoán trực tiếp. Kết quả điều trị phụ thuộc vào tình trạng của từng người.</p>
-    <p>Phòng khám: {{ site.clinicName | ph | safe }} · {{ site.clinicAddress | ph | safe }} · Giấy phép hoạt động: {{ site.clinicLicense | ph | safe }}</p>
+    <div class="fcols">
+      <div>
+        <a class="brand" href="/"><span class="mark">MH</span><span><b>{{ site.doctorName }}</b><small>{{ site.title }}</small></span></a>
+        <p style="margin-top:.9rem;max-width:34ch">Công tác tại {{ site.hospital }}. Theo dõi thai kỳ, tư vấn phẫu thuật phụ khoa, tư vấn online miễn phí.</p>
+      </div>
+      <div><h4>Chuyên mục</h4><ul>{% for c in site.categories %}<li><a href="/chuyen-muc/{{ c.slug }}/">{{ c.name }}</a></li>{% endfor %}</ul></div>
+      <div><h4>Liên kết nhanh</h4><ul><li><a href="/#dat-lich">Đăng ký khám</a></li><li><a href="/#cong-cu">Tính ngày dự sinh</a></li><li><a href="/#cong-cu">Tính ngày rụng trứng</a></li><li><a href="/bai-viet/">Tất cả bài viết</a></li></ul></div>
+      <div><h4>Liên hệ</h4><ul><li>{{ site.clinicName | ph | safe }}</li><li>{{ site.clinicAddress | ph | safe }}</li><li>Hotline/Zalo: {{ site.phone | ph | safe }}</li><li>{{ site.email | ph | safe }}</li></ul></div>
+    </div>
+    <div class="legal">
+      <p>Thông tin trên website mang tính tham khảo, không thay thế cho việc thăm khám và chẩn đoán trực tiếp. Kết quả điều trị phụ thuộc vào tình trạng của từng người.</p>
+      <p>Giấy phép hoạt động phòng khám: {{ site.clinicLicense | ph | safe }} · Chứng chỉ hành nghề: {{ site.licenseNumber | ph | safe }}</p>
+    </div>
   </div>
 </footer>
 
-<a class="zalo" href="{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}/#dat-lich{% endif %}" target="{% if site.zalo %}_blank{% endif %}" rel="noopener"><b>Zalo</b> Tư vấn miễn phí</a>
+<div class="float" aria-label="Liên hệ nhanh">
+  <a class="f-book" href="/#dat-lich">Đặt lịch</a>
+  <a class="f-zalo" href="{{ zaloHref }}" {% if site.zalo %}target="_blank" rel="noopener"{% endif %} aria-label="Nhắn Zalo">Zalo</a>
+  <a class="f-call" href="/#dat-lich" data-tel="{{ site.phone }}" aria-label="Gọi điện"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+</div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

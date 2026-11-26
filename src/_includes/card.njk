@@ -1,0 +1,11 @@
+{% macro card(post, cats) %}
+<article class="card">
+  <a class="thumb" href="{{ post.url }}" tabindex="-1" aria-hidden="true">{% if post.data.image %}<img src="{{ post.data.image }}" alt="" loading="lazy">{% else %}{{ post.data.category }}{% endif %}</a>
+  <div class="body">
+    <div class="meta"><a class="cat" href="/chuyen-muc/{{ post.data.category | catSlug(cats) }}/">{{ post.data.category }}</a><span>{{ post.date | ngay }}</span><span>{{ post.content | readingTime }} phút đọc</span></div>
+    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    <p>{{ post.data.description }}</p>
+    <a class="more" href="{{ post.url }}">Đọc tiếp →</a>
+  </div>
+</article>
+{% endmacro %}

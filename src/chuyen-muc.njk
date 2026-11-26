@@ -1,0 +1,20 @@
+---
+layout: base.njk
+pagination:
+  data: site.categories
+  size: 1
+  alias: cat
+permalink: "/chuyen-muc/{{ cat.slug }}/"
+eleventyComputed:
+  title: "{{ cat.name }}"
+---
+{% from "card.njk" import card %}
+{% set list = collections.posts | byCategory(cat.name) %}
+<section>
+  <div class="wrap">
+    <nav class="crumb"><a href="/">Trang chủ</a><span>›</span><a href="/bai-viet/">Bài viết</a><span>›</span><span>{{ cat.name }}</span></nav>
+    <div class="sec-head" style="margin-top:1rem"><div><p class="eyebrow">Chuyên mục</p><h1 style="font-size:clamp(1.9rem,4.5vw,2.5rem);margin-top:.4rem">{{ cat.name }}</h1></div></div>
+    {% if list.length %}<div class="cards">{% for post in list %}{{ card(post, site.categories) }}{% endfor %}</div>
+    {% else %}<p style="color:var(--muted)">Chuyên mục này chưa có bài viết. <a href="/bai-viet/">Xem tất cả bài viết</a>.</p>{% endif %}
+  </div>
+</section>

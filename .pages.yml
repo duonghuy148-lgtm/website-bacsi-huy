@@ -33,6 +33,9 @@ content:
       - name: date
         label: Ngày đăng
         type: date
+      - name: image
+        label: Ảnh đại diện bài viết (ngang, khoảng 1200×750)
+        type: image
       - name: draft
         label: Lưu nháp (chưa hiện trên web)
         type: boolean
@@ -60,5 +63,9 @@ content:
       - { name: clinicLicense, label: Số giấy phép hoạt động phòng khám, type: string }
       - { name: tiktok, label: Link kênh TikTok, type: string }
       - { name: tiktokHandle, label: Tên kênh TikTok, type: string }
+      - { name: tiktokFollowers, label: Số người theo dõi TikTok (ví dụ 120K), type: string }
+      - { name: facebook, label: Link Facebook, type: string }
+      - { name: mapLink, label: Link Google Maps của phòng khám, type: string }
+      - { name: hoursConfirmed, label: Giờ khám đã chính xác (bật để hiện trạng thái mở cửa), type: boolean }
       - { name: bio, label: Tiểu sử ngắn, type: text }
       - { name: bookingEndpoint, label: Link nhận form đặt lịch (Google Apps Script), type: string }

@@ -1,23 +1,29 @@
 {
-  "url": "https://website-bacsi-huy.pages.dev",
-  "doctorName": "Bác sĩ Huy",
+  "url": "https://bsduongmanhuy.com",
+  "doctorName": "BS. Dương Mạnh Huy",
+  "shortName": "BS. Mạnh Huy",
   "title": "Bác sĩ Sản phụ khoa",
   "hospital": "Bệnh viện Phụ sản Trung ương",
+  "hospitalShort": "BV Phụ sản TW",
   "clinicName": "[Tên phòng khám tư]",
   "clinicAddress": "[Số nhà, đường, quận, Hà Nội]",
+  "mapLink": "",
   "phone": "[09xx xxx xxx]",
   "zalo": "",
+  "facebook": "",
   "email": "[email liên hệ]",
   "experienceYears": "[số]",
   "licenseNumber": "[Số chứng chỉ hành nghề]",
   "clinicLicense": "[Số giấy phép hoạt động của phòng khám]",
   "tiktok": "",
   "tiktokHandle": "[@tên kênh]",
+  "tiktokFollowers": "",
   "bookingEndpoint": "",
+  "hoursConfirmed": false,
   "hours": [
-    { "day": "Thứ 2 – Thứ 6", "session": "Chiều tối", "time": "[17:00 – 20:00]" },
-    { "day": "Thứ 7", "session": "Sáng", "time": "[08:00 – 11:30]" },
-    { "day": "Chủ nhật", "session": "Theo hẹn", "time": "" }
+    { "label": "Thứ 2 – Thứ 6", "days": [1, 2, 3, 4, 5], "open": "17:00", "close": "20:00" },
+    { "label": "Thứ 7", "days": [6], "open": "08:00", "close": "11:30" },
+    { "label": "Chủ nhật", "days": [], "open": "", "close": "" }
   ],
   "bio": "[Đoạn tiểu sử ngắn 3 đến 4 câu: quê quán, trường đào tạo, lý do chọn chuyên ngành Sản phụ khoa, phương châm làm nghề.]",
   "timeline": [
@@ -25,10 +31,16 @@
     { "year": "[năm]", "text": "Bác sĩ Chuyên khoa / Thạc sĩ Sản phụ khoa, [nơi đào tạo]" },
     { "year": "[năm]", "text": "Công tác tại Bệnh viện Phụ sản Trung ương" }
   ],
+  "categories": [
+    { "name": "Thai sản", "slug": "thai-san" },
+    { "name": "Phẫu thuật phụ khoa", "slug": "phau-thuat-phu-khoa" },
+    { "name": "Phụ khoa", "slug": "phu-khoa" },
+    { "name": "Hỏi đáp", "slug": "hoi-dap" }
+  ],
   "videos": [
-    { "title": "Ra máu khi mang thai 3 tháng đầu: khi nào cần đi khám?", "url": "" },
-    { "title": "Đo độ mờ da gáy là gì?", "url": "" },
-    { "title": "U xơ tử cung có cần mổ không?", "url": "" },
-    { "title": "Tiêm HPV ở tuổi nào?", "url": "" }
+    { "title": "Ra máu khi mang thai 3 tháng đầu: khi nào cần đi khám?", "url": "", "thumb": "" },
+    { "title": "Đo độ mờ da gáy là gì?", "url": "", "thumb": "" },
+    { "title": "U xơ tử cung có cần mổ không?", "url": "", "thumb": "" },
+    { "title": "Tiêm HPV ở tuổi nào?", "url": "", "thumb": "" }
   ]
 }
