@@ -1,0 +1,142 @@
+---
+layout: base.njk
+---
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Bác sĩ Sản phụ khoa · {{ site.hospital }}</p>
+      <h1 style="margin-top:.6rem">Đồng hành cùng phụ nữ <em>qua từng giai đoạn</em> của sức khỏe sinh sản</h1>
+      <p class="lead">{{ site.doctorName }} công tác tại {{ site.hospital }}, chuyên theo dõi thai kỳ và phẫu thuật phụ khoa. Bác sĩ chia sẻ kiến thức sản phụ khoa dễ hiểu qua bài viết và video ngắn, giúp chị em chủ động chăm sóc sức khỏe của mình.</p>
+      <div class="cta">
+        <a class="btn" href="#dat-lich">Đặt lịch khám</a>
+        <a class="btn ghost" href="{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}#dat-lich{% endif %}">Tư vấn online miễn phí</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Nơi công tác</dt><dd>{{ site.hospital }}</dd></div>
+        <div><dt>Phòng khám tư</dt><dd>{{ site.clinicName | ph | safe }}</dd></div>
+        <div><dt>Kinh nghiệm</dt><dd>{{ site.experienceYears | ph | safe }} năm</dd></div>
+        <div><dt>Chứng chỉ hành nghề</dt><dd>{{ site.licenseNumber | ph | safe }}</dd></div>
+      </dl>
+    </div>
+    <div class="portrait" role="img" aria-label="Ảnh chân dung bác sĩ">
+      <div>
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="22" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 56c2-11 10-17 20-17s18 6 20 17" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        Ảnh chân dung bác sĩ<br><span class="ph">[ảnh dọc, áo blouse]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gioi-thieu" class="alt">
+  <div class="wrap about">
+    <div>
+      <p class="eyebrow">Giới thiệu</p>
+      <h2 style="margin-top:.5rem">Về bác sĩ</h2>
+    </div>
+    <div class="text">
+      <p>{{ site.bio | ph | safe }}</p>
+      <p>Bác sĩ tin rằng người bệnh hiểu rõ cơ thể mình thì sẽ yên tâm hơn khi điều trị. Vì vậy mỗi buổi khám đều dành thời gian giải thích kết quả và các lựa chọn để chị em cùng quyết định.</p>
+      <ul class="cv">
+        {% for t in site.timeline %}<li><b>{{ t.year }}</b><span>{{ t.text | ph | safe }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="dich-vu">
+  <div class="wrap">
+    <p class="eyebrow">Chuyên môn</p>
+    <h2 style="margin-top:.5rem">Dịch vụ khám và tư vấn</h2>
+    <div class="grid">
+      <article class="svc"><span class="tag">Thai sản</span><h3>Khám và theo dõi thai kỳ</h3><p>Theo dõi sức khỏe mẹ và sự phát triển của thai qua từng mốc, tư vấn dinh dưỡng, vận động và chuẩn bị sinh.</p></article>
+      <article class="svc"><span class="tag">Thai sản</span><h3>Thai kỳ nguy cơ cao</h3><p>Tư vấn theo dõi khi có tiền sử sảy thai, mổ lấy thai, tăng huyết áp hoặc đái tháo đường thai kỳ.</p></article>
+      <article class="svc"><span class="tag">Hình ảnh</span><h3>Siêu âm sản phụ khoa</h3><p>Siêu âm thai các mốc quan trọng, siêu âm tử cung và buồng trứng.</p></article>
+      <article class="svc"><span class="tag">Phẫu thuật</span><h3>Tư vấn phẫu thuật phụ khoa</h3><p>U xơ tử cung, u nang buồng trứng, polyp và các bệnh lý cần can thiệp. Bác sĩ giải thích rõ chỉ định, phương pháp mổ và chăm sóc sau mổ.</p></article>
+      <article class="svc"><span class="tag">Phụ khoa</span><h3>Khám phụ khoa và tầm soát</h3><p>Khám viêm nhiễm, rối loạn kinh nguyệt, tư vấn xét nghiệm Pap, HPV và tiêm phòng HPV.</p></article>
+      <article class="svc"><span class="tag">Miễn phí</span><h3>Tư vấn online miễn phí</h3><p>Hỏi đáp qua Zalo về kết quả xét nghiệm và các thắc mắc khi chưa tiện đến khám. Không thay thế khám trực tiếp khi cần.</p></article>
+    </div>
+    <p class="note">Phẫu thuật được thực hiện tại cơ sở y tế đủ điều kiện theo chỉ định của bác sĩ. Mỗi trường hợp được thăm khám và tư vấn riêng.</p>
+  </div>
+</section>
+
+<section id="kham-thai" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Dành cho mẹ bầu</p>
+    <h2 style="margin-top:.5rem">Những mốc khám thai không nên bỏ lỡ</h2>
+    <ol class="tl">
+      <li><div class="wk">6–8<small>tuần</small></div><div><h3>Xác định thai trong tử cung</h3><p>Siêu âm xác định vị trí túi thai, tim thai và tính tuổi thai.</p></div></li>
+      <li><div class="wk">11–13<small>tuần 6 ngày</small></div><div><h3>Đo độ mờ da gáy</h3><p>Kết hợp xét nghiệm máu để sàng lọc nguy cơ bất thường nhiễm sắc thể.</p></div></li>
+      <li><div class="wk">18–22<small>tuần</small></div><div><h3>Siêu âm hình thái</h3><p>Khảo sát chi tiết các cơ quan của thai nhi.</p></div></li>
+      <li><div class="wk">24–28<small>tuần</small></div><div><h3>Tầm soát đái tháo đường thai kỳ</h3><p>Nghiệm pháp dung nạp đường huyết theo chỉ định.</p></div></li>
+      <li><div class="wk">30–32<small>tuần</small></div><div><h3>Đánh giá tăng trưởng</h3><p>Theo dõi cân nặng ước tính, nước ối và bánh nhau.</p></div></li>
+      <li><div class="wk">từ 36<small>tuần</small></div><div><h3>Chuẩn bị chuyển dạ</h3><p>Khám dày hơn theo hẹn, đánh giá ngôi thai và lên kế hoạch sinh.</p></div></li>
+    </ol>
+    <p class="note">Lịch khám cụ thể tùy từng thai kỳ và theo chỉ định của bác sĩ trực tiếp theo dõi.</p>
+  </div>
+</section>
+
+<section id="kien-thuc">
+  <div class="wrap">
+    <p class="eyebrow">Kiến thức y khoa</p>
+    <h2 style="margin-top:.5rem">Bài viết mới từ bác sĩ</h2>
+    <div class="posts">
+      {% for post in collections.posts | limit(3) %}
+      <article class="post"><span class="meta">{{ post.data.category }} · {{ post.date | ngay }}</span><h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3><p>{{ post.data.description }}</p><a href="{{ post.url }}">Đọc bài</a></article>
+      {% endfor %}
+    </div>
+    <p style="margin-top:1.6rem"><a class="btn ghost" href="/bai-viet/">Xem tất cả bài viết</a></p>
+    <h3 style="margin-top:3rem;font-size:1.4rem">Video ngắn</h3>
+    <p style="color:var(--muted);margin-top:.6rem;max-width:60ch">Theo dõi kênh TikTok {% if site.tiktok %}<a href="{{ site.tiktok }}">{{ site.tiktokHandle }}</a>{% else %}{{ site.tiktokHandle | ph | safe }}{% endif %} để xem thêm kiến thức sản phụ khoa mỗi tuần.</p>
+    <div class="vids">
+      {% for v in site.videos %}
+      {% if v.url %}<a class="vid" href="{{ v.url }}" target="_blank" rel="noopener"><span>TikTok</span><b>{{ v.title }}</b></a>
+      {% else %}<div class="vid"><span>Video</span><b>{{ v.title }}</b></div>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="dat-lich" class="alt">
+  <div class="wrap book">
+    <div class="info">
+      <p class="eyebrow">Liên hệ</p>
+      <h2>Đặt lịch khám</h2>
+      <dl>
+        <div><dt>Tư vấn online miễn phí qua Zalo</dt><dd>{% if site.zalo %}<a href="https://zalo.me/{{ site.zalo }}">{{ site.phone }}</a>{% else %}{{ site.phone | ph | safe }}{% endif %}</dd></div>
+        <div><dt>Nơi khám</dt><dd>{{ site.hospital }} (theo lịch của bệnh viện) và phòng khám tư {{ site.clinicName | ph | safe }}</dd></div>
+        <div><dt>Địa chỉ phòng khám</dt><dd>{{ site.clinicAddress | ph | safe }}</dd></div>
+        <div><dt>Email</dt><dd>{{ site.email | ph | safe }}</dd></div>
+      </dl>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Ngày</th><th>Buổi</th><th>Giờ</th></tr></thead>
+          <tbody>
+            {% for h in site.hours %}<tr><td>{{ h.day }}</td><td>{{ h.session }}</td><td>{{ h.time | ph | safe }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <form id="bookForm" novalidate data-endpoint="{{ site.bookingEndpoint }}">
+      <div class="row">
+        <label for="f-name">Họ và tên<input id="f-name" name="name" required autocomplete="name" placeholder="Nguyễn Thị A"></label>
+        <label for="f-phone">Số điện thoại<input id="f-phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"></label>
+      </div>
+      <div class="row">
+        <label for="f-svc">Nhu cầu khám
+          <select id="f-svc" name="service">
+            <option>Khám thai</option><option>Thai kỳ nguy cơ cao</option><option>Siêu âm</option>
+            <option>Tư vấn phẫu thuật phụ khoa</option><option>Khám phụ khoa, tầm soát</option><option>Tư vấn online miễn phí</option>
+          </select></label>
+        <label for="f-date">Ngày mong muốn<input id="f-date" name="date" type="date"></label>
+      </div>
+      <label for="f-note">Mô tả ngắn (không bắt buộc)<textarea id="f-note" name="note" placeholder="Ví dụ: thai 12 tuần, muốn đo độ mờ da gáy"></textarea></label>
+      <button class="btn" type="submit">Gửi yêu cầu đặt lịch</button>
+      <p class="small">Phòng khám sẽ gọi lại để xác nhận giờ khám. Trường hợp cấp cứu như ra máu nhiều, đau bụng dữ dội, vui lòng đến cơ sở y tế gần nhất hoặc gọi 115.</p>
+      <div id="bookMsg" class="ok" hidden role="status"></div>
+    </form>
+  </div>
+</section>
+
+<script src="/assets/booking.js" defer></script>

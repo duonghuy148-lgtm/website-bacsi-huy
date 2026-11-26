@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} | {% endif %}{{ site.doctorName }} – {{ site.title }}</title>
+<meta name="description" content="{{ description or ('Bác sĩ Sản phụ khoa tại ' + site.hospital + '. Theo dõi thai kỳ, tư vấn phẫu thuật phụ khoa, tư vấn online miễn phí.') }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ title or (site.doctorName + ' – ' + site.title) }}">
+<meta property="og:description" content="{{ description or site.hospital }}">
+<meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Physician","name":{{ site.doctorName | dump | safe }},"medicalSpecialty":"Obstetric","url":{{ site.url | dump | safe }},"address":{"@type":"PostalAddress","streetAddress":{{ site.clinicAddress | dump | safe }},"addressCountry":"VN"}}
+</script>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/">{{ site.doctorName }}</a>
+    <nav class="nav" aria-label="Mục lục">
+      <a href="/#gioi-thieu">Giới thiệu</a>
+      <a href="/#dich-vu">Dịch vụ</a>
+      <a href="/#kham-thai">Mốc khám thai</a>
+      <a href="/bai-viet/">Bài viết</a>
+      <a href="/#dat-lich">Đặt lịch</a>
+    </nav>
+    <a class="btn" href="/#dat-lich">Đặt lịch khám</a>
+  </div>
+</header>
+
+<main id="top">
+{{ content | safe }}
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong style="color:var(--ink)">{{ site.doctorName }} · Sản phụ khoa</strong>
+    <p class="disclaim">Thông tin trên website mang tính tham khảo, không thay thế cho việc thăm khám và chẩn đoán trực tiếp. Kết quả điều trị phụ thuộc vào tình trạng của từng người.</p>
+    <p>Phòng khám: {{ site.clinicName | ph | safe }} · {{ site.clinicAddress | ph | safe }} · Giấy phép hoạt động: {{ site.clinicLicense | ph | safe }}</p>
+  </div>
+</footer>
+
+<a class="zalo" href="{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}/#dat-lich{% endif %}" target="{% if site.zalo %}_blank{% endif %}" rel="noopener"><b>Zalo</b> Tư vấn miễn phí</a>
+</body>
+</html>

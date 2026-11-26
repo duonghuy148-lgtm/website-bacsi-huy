@@ -1,0 +1,64 @@
+# Cấu hình trang quản trị Pages CMS (https://app.pagescms.org)
+# Bác sĩ đăng nhập bằng GitHub, viết bài trên giao diện, bấm Lưu là web tự cập nhật.
+media:
+  input: src/assets/images
+  output: /assets/images
+
+content:
+  - name: posts
+    label: Bài viết
+    type: collection
+    path: src/bai-viet
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, category, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+        required: true
+      - name: description
+        label: Tóm tắt (1–2 câu, hiện ở trang chủ và Google)
+        type: text
+        required: true
+      - name: category
+        label: Chuyên mục
+        type: select
+        options:
+          values: [Thai sản, Phẫu thuật phụ khoa, Phụ khoa, Hỏi đáp]
+      - name: date
+        label: Ngày đăng
+        type: date
+      - name: draft
+        label: Lưu nháp (chưa hiện trên web)
+        type: boolean
+      - name: sample
+        label: Bài mẫu chưa duyệt (hiện dòng cảnh báo)
+        type: boolean
+      - name: body
+        label: Nội dung
+        type: rich-text
+
+  - name: site
+    label: Thông tin bác sĩ và phòng khám
+    type: file
+    path: src/_data/site.json
+    fields:
+      - { name: doctorName, label: Tên hiển thị, type: string }
+      - { name: hospital, label: Bệnh viện công tác, type: string }
+      - { name: clinicName, label: Tên phòng khám tư, type: string }
+      - { name: clinicAddress, label: Địa chỉ phòng khám, type: string }
+      - { name: phone, label: Số điện thoại hiển thị, type: string }
+      - { name: zalo, label: Số Zalo (chỉ số, ví dụ 0912345678), type: string }
+      - { name: email, label: Email, type: string }
+      - { name: experienceYears, label: Số năm kinh nghiệm, type: string }
+      - { name: licenseNumber, label: Số chứng chỉ hành nghề, type: string }
+      - { name: clinicLicense, label: Số giấy phép hoạt động phòng khám, type: string }
+      - { name: tiktok, label: Link kênh TikTok, type: string }
+      - { name: tiktokHandle, label: Tên kênh TikTok, type: string }
+      - { name: bio, label: Tiểu sử ngắn, type: text }
+      - { name: bookingEndpoint, label: Link nhận form đặt lịch (Google Apps Script), type: string }
