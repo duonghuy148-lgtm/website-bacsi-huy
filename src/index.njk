@@ -187,7 +187,7 @@ layout: base.njk
 <section id="dat-lich">
   <div class="wrap book">
     <div class="info">
-      <p class="eyebrow">Phòng khám</p>
+      <p class="eyebrow">Phòng khám Minh Khang · khám ngoài giờ</p>
       <h2>Thông tin và giờ khám</h2>
       <dl>
         <div><dt>Phòng khám tư</dt><dd>{{ site.clinicName | ph | safe }}</dd></div>
@@ -199,7 +199,7 @@ layout: base.njk
         <table>
           <thead><tr><th>Ngày</th><th>Giờ khám</th></tr></thead>
           <tbody>
-            {% for h in site.hours %}<tr data-days="{{ h.days | dump }}"><td>{{ h.label }}</td><td>{% if h.open %}{% if site.hoursConfirmed %}{{ h.open }} – {{ h.close }}{% else %}<span class="ph">[{{ h.open }} – {{ h.close }}]</span>{% endif %}{% else %}Nghỉ / theo hẹn{% endif %}</td></tr>
+            {% for h in site.hours %}<tr data-days="{{ h.days | dump }}"><td>{{ h.label }}</td><td>{% for sl in h.slots %}{{ sl[0] }} – {{ sl[1] }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>
             {% endfor %}
           </tbody>
         </table>

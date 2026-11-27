@@ -21,12 +21,13 @@
       var now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Ho_Chi_Minh" }));
       var day = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
       var toM = function (s) { var p = s.split(":"); return +p[0] * 60 + +p[1]; };
-      var today = hours.find(function (h) { return h.days.indexOf(day) >= 0 && h.open; });
+      var today = hours.find(function (h) { return h.days.indexOf(day) >= 0; });
+      var slots = today ? today.slots : [];
       var label = st.querySelector("span");
-      if (!today) { st.classList.add("closed"); label.textContent = "Hôm nay nghỉ khám"; }
-      else if (mins >= toM(today.open) && mins < toM(today.close)) label.textContent = "Đang mở cửa đến " + today.close;
-      else if (mins < toM(today.open)) { st.classList.add("closed"); label.textContent = "Hôm nay mở cửa lúc " + today.open; }
-      else { st.classList.add("closed"); label.textContent = "Đã đóng cửa hôm nay"; }
+      var cur = slots.find(function (s) { return mins >= toM(s[0]) && mins < toM(s[1]); });
+      var next = slots.find(function (s) { return mins < toM(s[0]); });
+      if (cur) label.textContent = "Đang mở cửa đến " + cur[1];
+      else { st.classList.add("closed"); label.textContent = next ? "Hôm nay mở cửa lúc " + next[0] : (slots.length ? "Đã hết giờ khám hôm nay" : "Hôm nay nghỉ khám"); }
       document.querySelectorAll("tr[data-days]").forEach(function (tr) {
         if (JSON.parse(tr.dataset.days).indexOf(day) >= 0) tr.classList.add("today");
       });

@@ -5,7 +5,7 @@
   "title": "Bác sĩ Chuyên khoa I Sản phụ khoa",
   "hospital": "Bệnh viện Phụ sản Trung ương",
   "hospitalShort": "BV Phụ sản TW",
-  "clinicName": "[Tên phòng khám tư]",
+  "clinicName": "Phòng khám Minh Khang",
   "clinicAddress": "219 Kim Ngưu, Hà Nội",
   "mapLink": "https://www.google.com/maps/search/?api=1&query=219+Kim+Ng%C6%B0u%2C+H%C3%A0+N%E1%BB%99i",
   "phone": "0987 160 360",
@@ -19,7 +19,7 @@
   "tiktokHandle": "@bsmanhhuy.sanc",
   "tiktokFollowers": "",
   "bookingEndpoint": "",
-  "hoursConfirmed": false,
+  "hoursConfirmed": true,
   "hours": [
     {
       "label": "Thứ 2 – Thứ 6",
@@ -30,22 +30,29 @@
         4,
         5
       ],
-      "open": "17:00",
-      "close": "20:00"
+      "slots": [
+        [
+          "17:00",
+          "20:00"
+        ]
+      ]
     },
     {
-      "label": "Thứ 7",
+      "label": "Thứ 7, Chủ nhật",
       "days": [
-        6
+        6,
+        0
       ],
-      "open": "08:00",
-      "close": "11:30"
-    },
-    {
-      "label": "Chủ nhật",
-      "days": [],
-      "open": "",
-      "close": ""
+      "slots": [
+        [
+          "08:00",
+          "11:00"
+        ],
+        [
+          "14:30",
+          "19:00"
+        ]
+      ]
     }
   ],
   "bio": "Bác sĩ Chuyên khoa I Dương Mạnh Huy tốt nghiệp Đại học Y Hà Nội và công tác tại Bệnh viện Phụ sản Trung ương từ năm 2016, hiện làm việc tại Khoa Điều trị theo yêu cầu. Bác sĩ chuyên về bệnh lý và phẫu thuật sản phụ khoa, đã tham gia nhiều khóa đào tạo chuyên sâu về sản phụ khoa, vô sinh và hỗ trợ sinh sản. Năm 2018, bác sĩ tham gia Dự án 585 đưa bác sĩ trẻ về vùng khó khăn, công tác tại Bệnh viện Đa khoa huyện Bảo Lạc, Cao Bằng.",
