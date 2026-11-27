@@ -119,5 +119,6 @@
     "2 lần nhận Bằng khen của Bộ trưởng Bộ Y tế",
     "Bằng khen của Chủ tịch Thành phố",
     "Bằng khen của Công đoàn Y tế Việt Nam"
-  ]
+  ],
+  "clinicBookingUrl": "https://phong-kham-minh-khang.phongkhamminhkhang.workers.dev/dat-lich"
 }

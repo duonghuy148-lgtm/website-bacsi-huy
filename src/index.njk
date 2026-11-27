@@ -205,26 +205,22 @@ layout: base.njk
         </table>
       </div>
     </div>
-    <form class="panel" id="bookForm" novalidate data-endpoint="{{ site.bookingEndpoint }}">
-      <h3 style="font-size:1.3rem">Đăng ký khám</h3>
-      <div class="row">
-        <label for="f-name">Họ và tên<input id="f-name" name="name" required autocomplete="name" placeholder="Nguyễn Thị A"></label>
-        <label for="f-phone">Số điện thoại<input id="f-phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"></label>
+    <div class="choices">
+      <h3 style="font-size:1.3rem">Bạn muốn khám ở đâu?</h3>
+      <div class="choice">
+        <p class="eyebrow">Phòng khám tư</p>
+        <h4>Khám tại phòng khám {{ site.clinicAddress }}</h4>
+        <p>Chọn ngày giờ phù hợp và đặt lịch trực tuyến. Phòng khám sẽ xác nhận lại với bạn.</p>
+        <a class="btn" href="{{ site.clinicBookingUrl }}" target="_blank" rel="noopener">Đặt lịch khám tại phòng khám</a>
       </div>
-      <div class="row">
-        <label for="f-svc">Nhu cầu khám
-          <select id="f-svc" name="service">
-            <option>Khám thai</option><option>Thai kỳ nguy cơ cao</option><option>Siêu âm</option>
-            <option>Tư vấn phẫu thuật phụ khoa</option><option>Khám phụ khoa, tầm soát</option><option>Tư vấn online miễn phí</option>
-          </select></label>
-        <label for="f-date">Ngày mong muốn<input id="f-date" name="date" type="date"></label>
+      <div class="choice">
+        <p class="eyebrow">Bệnh viện</p>
+        <h4>Khám tại {{ site.department }}, {{ site.hospital }}</h4>
+        <p>Nhắn Zalo cho bác sĩ để được hẹn lịch khám tại bệnh viện và hướng dẫn thủ tục.</p>
+        <a class="btn zalo-btn" href="{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}#dat-lich{% endif %}" target="_blank" rel="noopener">Nhắn Zalo hẹn lịch tại bệnh viện</a>
       </div>
-      <label for="f-note">Mô tả ngắn (không bắt buộc)<textarea id="f-note" name="note" placeholder="Ví dụ: thai 12 tuần, muốn đo độ mờ da gáy"></textarea></label>
-      <button class="btn" type="submit">Gửi đăng ký</button>
-      <p class="small">Phòng khám sẽ gọi lại để xác nhận giờ khám. Trường hợp cấp cứu như ra máu nhiều, đau bụng dữ dội, vui lòng đến cơ sở y tế gần nhất hoặc gọi 115.</p>
-      <div id="bookMsg" class="ok" hidden role="status"></div>
-    </form>
+      <p class="small">Trường hợp cấp cứu như ra máu nhiều, đau bụng dữ dội, vui lòng đến cơ sở y tế gần nhất hoặc gọi 115.</p>
+    </div>
   </div>
 </section>
 
-<script src="/assets/booking.js" defer></script>
