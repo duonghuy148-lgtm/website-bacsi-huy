@@ -16,8 +16,8 @@ layout: base.njk
         {{ content | safe }}
       </div>
       <aside class="post-cta">
-        <p><strong>Cần bác sĩ xem trường hợp của bạn?</strong> Tư vấn online miễn phí qua Zalo, hoặc đăng ký khám trực tiếp.</p>
-        <div><a class="btn" href="/#dat-lich">Đăng ký khám</a><a class="btn zalo-btn" href="{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}/#dat-lich{% endif %}">Nhắn Zalo</a></div>
+        <p><strong>Bác sĩ tư vấn miễn phí qua số điện thoại {{ site.phone }}.</strong> Bác sĩ khám và phẫu thuật tại {{ site.hospital }}.</p>
+        <div><a class="btn" href="/#dat-lich">Đăng ký khám</a><a class="btn zalo-btn" href="{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}/#dat-lich{% endif %}">Nhắn Zalo {{ site.phone }}</a></div>
       </aside>
       <p class="small" style="margin-top:1.4rem">Bài viết mang tính tham khảo, không thay thế việc thăm khám trực tiếp. Khi có dấu hiệu bất thường như ra máu nhiều, đau bụng dữ dội, hãy đến cơ sở y tế gần nhất hoặc gọi 115.</p>
       {% set rel = collections.posts | without(page.url) | limit(3) %}
