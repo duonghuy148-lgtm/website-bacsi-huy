@@ -271,3 +271,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-block:
 .choice p:not(.eyebrow){color:var(--muted);font-size:.94rem}
 .choice .btn{margin-top:.3rem;white-space:normal}
 .float .f-fb{background:#1877f2;font:700 1.4rem Arial,sans-serif}
+.media.pic{aspect-ratio:4/5;padding:0;overflow:hidden;max-width:460px;justify-self:center;width:100%}
+.media.pic img{width:100%;height:100%;object-fit:cover}
+.photo .frame{padding:0}
+.about-img{margin-top:1.4rem;border-radius:18px;border:1px solid var(--line);width:100%;height:auto}

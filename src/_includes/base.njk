@@ -11,6 +11,7 @@
 <meta property="og:title" content="{{ title or (site.doctorName + ' – ' + site.title) }}">
 <meta property="og:description" content="{{ description or site.hospital }}">
 <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
+{% if not image %}<meta property="og:image" content="{{ site.url }}/assets/images/bac-si-chan-dung.jpg">{% endif %}
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 {% if image %}<meta property="og:image" content="{{ site.url }}{{ image }}">{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -18,9 +18,7 @@ layout: base.njk
       </div>
     </div>
     <div class="photo">
-      <div class="frame" role="img" aria-label="Ảnh chân dung bác sĩ">
-        <div>Ảnh chân dung bác sĩ<br><span class="ph">[ảnh dọc, áo blouse]</span></div>
-      </div>
+      <div class="frame"><img src="/assets/images/bac-si-chan-dung.jpg" alt="{{ site.doctorName }} tại phòng sinh, Bệnh viện Phụ sản Trung ương" width="800" height="996" fetchpriority="high"></div>
       <div class="badge"><b>{{ site.experienceYears | ph | safe }}+ năm</b><span>kinh nghiệm Sản phụ khoa</span></div>
       <div class="badge two"><b>{{ site.hospitalShort }}</b><span>nơi công tác</span></div>
     </div>
@@ -53,7 +51,7 @@ layout: base.njk
       </ul>
       <div class="cta"><a class="btn" href="#dat-lich">Đăng ký khám thai</a><a class="btn ghost" href="/chuyen-muc/thai-san/">Bài viết thai sản</a></div>
     </div>
-    <div class="media"><div><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><circle cx="32" cy="14" r="7"/><path d="M24 58V40c-4-2-6-7-4-13 2-5 7-7 12-7s8 3 9 8c6 2 9 7 8 13-1 5-5 8-11 8h-6v9"/></svg><p>Ảnh minh họa khám thai<br><span class="ph">[ảnh thật của bác sĩ]</span></p></div></div>
+    <div class="media pic"><img src="/assets/images/me-va-be.jpg" alt="Bác sĩ chúc mừng mẹ và bé sau sinh" loading="lazy" width="900" height="1167"></div>
   </div>
 </section>
 
@@ -70,7 +68,7 @@ layout: base.njk
       </ul>
       <div class="cta"><a class="btn" href="#dat-lich">Đặt lịch tư vấn</a><a class="btn ghost" href="/chuyen-muc/phau-thuat-phu-khoa/">Bài viết phẫu thuật</a></div>
     </div>
-    <div class="media"><div><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M32 8v10M22 18h20l-2 10H24zM24 28c-6 4-10 12-8 20 2 6 8 8 16 8s14-2 16-8c2-8-2-16-8-20"/></svg><p>Ảnh minh họa phẫu thuật<br><span class="ph">[ảnh thật của bác sĩ]</span></p></div></div>
+    <div class="media pic"><img src="/assets/images/phong-mo.jpg" alt="Bác sĩ trong phòng mổ, bế em bé vừa chào đời" loading="lazy" width="800" height="1000"></div>
   </div>
 </section>
 
@@ -173,6 +171,7 @@ layout: base.njk
       <p class="eyebrow">Về bác sĩ</p>
       <h2 style="margin-top:.4rem">{{ site.doctorName }}</h2>
       <p style="color:var(--muted);margin-top:.6rem">{{ site.degree }} Sản phụ khoa<br>{{ site.department }}, {{ site.hospital }}</p>
+      <img class="about-img" src="/assets/images/thai-san-gia-dinh.jpg" alt="Bác sĩ cùng gia đình sản phụ sau ca sinh" loading="lazy" width="900" height="840">
     </div>
     <div class="text">
       <p>{{ site.bio | ph | safe }}</p>
