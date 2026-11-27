@@ -2,7 +2,7 @@
   "url": "https://bsduongmanhuy.com",
   "doctorName": "BS. Dương Mạnh Huy",
   "shortName": "BS. Mạnh Huy",
-  "title": "Bác sĩ Chuyên khoa I Sản phụ khoa",
+  "title": "Bác sĩ chuyên khoa sâu Sản phụ khoa",
   "hospital": "Bệnh viện Phụ sản Trung ương",
   "hospitalShort": "BV Phụ sản TW",
   "clinicName": "Phòng khám Minh Khang",
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "bio": "Bác sĩ Chuyên khoa I Dương Mạnh Huy tốt nghiệp Đại học Y Hà Nội và công tác tại Bệnh viện Phụ sản Trung ương từ năm 2016, hiện làm việc tại Khoa Điều trị theo yêu cầu. Bác sĩ chuyên về bệnh lý và phẫu thuật sản phụ khoa, đã tham gia nhiều khóa đào tạo chuyên sâu về sản phụ khoa, vô sinh và hỗ trợ sinh sản. Năm 2018, bác sĩ tham gia Dự án 585 đưa bác sĩ trẻ về vùng khó khăn, công tác tại Bệnh viện Đa khoa huyện Bảo Lạc, Cao Bằng.",
+  "bio": "Bác sĩ Dương Mạnh Huy, bác sĩ chuyên khoa sâu Sản phụ khoa, tốt nghiệp Đại học Y Hà Nội và công tác tại Bệnh viện Phụ sản Trung ương từ năm 2016, hiện làm việc tại Khoa Điều trị theo yêu cầu. Bác sĩ chuyên về bệnh lý và phẫu thuật sản phụ khoa, đã tham gia nhiều khóa đào tạo chuyên sâu về sản phụ khoa, vô sinh và hỗ trợ sinh sản. Năm 2018, bác sĩ tham gia Dự án 585 đưa bác sĩ trẻ về vùng khó khăn, công tác tại Bệnh viện Đa khoa huyện Bảo Lạc, Cao Bằng.",
   "timeline": [
     {
       "year": "2015",
@@ -67,7 +67,7 @@
     },
     {
       "year": "2018",
-      "text": "Tốt nghiệp Bác sĩ Chuyên khoa I Sản phụ khoa, Đại học Y Hà Nội"
+      "text": "Đào tạo chuyên khoa sâu Sản phụ khoa, Đại học Y Hà Nội"
     },
     {
       "year": "2018",
@@ -120,7 +120,7 @@
       "thumb": ""
     }
   ],
-  "degree": "Bác sĩ Chuyên khoa I",
+  "degree": "Bác sĩ chuyên khoa sâu",
   "department": "Khoa Điều trị theo yêu cầu",
   "awards": [
     "2 lần nhận Bằng khen của Bộ trưởng Bộ Y tế",
