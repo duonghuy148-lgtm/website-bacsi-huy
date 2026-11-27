@@ -4,7 +4,7 @@ layout: base.njk
 {% from "card.njk" import card %}
 {% set slug = category | catSlug(site.categories) %}
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MedicalWebPage","headline":{{ title | dump | safe }},"description":{{ (description or "") | dump | safe }},"inLanguage":"vi","url":{{ (site.url + page.url) | dump | safe }},"datePublished":"{{ page.date | isoDate }}","dateModified":"{{ (updated or page.date) | isoDate }}","lastReviewed":"{{ (updated or page.date) | isoDate }}","author":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ (site.url + "/#gioi-thieu") | dump | safe }}},"reviewedBy":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ (site.url + "/#gioi-thieu") | dump | safe }}},"publisher":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ site.url | dump | safe }}}}
+{"@context":"https://schema.org","@type":"MedicalWebPage","headline":{{ title | dump | safe }},"description":{{ (description or "") | dump | safe }},"inLanguage":"vi","url":{{ (site.url + page.url) | dump | safe }},"datePublished":"{{ page.date | isoDate }}","dateModified":"{{ (updated or page.date) | isoDate }}","lastReviewed":"{{ (updated or page.date) | isoDate }}","author":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ (site.url + "/#gioi-thieu") | dump | safe }}},{% if not sample %}"reviewedBy":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ (site.url + "/#gioi-thieu") | dump | safe }}},{% endif %}"publisher":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ site.url | dump | safe }}}}
 </script>
 <section class="article">
   <div class="wrap post-layout">
@@ -23,12 +23,11 @@ layout: base.njk
       <div class="prose">
         {{ content | safe }}
       </div>
-      <aside class="author-box" aria-label="Bác sĩ duyệt nội dung">
+      <aside class="author-box" aria-label="Bác sĩ phụ trách bài viết">
         <span class="mark" aria-hidden="true">MH</span>
         <div>
-          <p class="small">Bác sĩ duyệt nội dung</p>
-          <p><a href="/#gioi-thieu"><b>{{ site.doctorName }}</b></a></p>
-          <p class="small">{{ site.title }} · {{ site.hospital }}</p>
+          <p><a href="/#gioi-thieu"><b>BSCK. Dương Mạnh Huy</b></a></p>
+          <p class="small">Bác sĩ Khoa Điều trị theo yêu cầu, {{ site.hospital }}</p>
           <p class="small">Đăng ngày {{ page.date | ngay }}{% if updated %} · Cập nhật ngày {{ updated | ngay }}{% endif %}</p>
         </div>
       </aside>
