@@ -100,10 +100,25 @@ layout: base.njk
       <a class="btn ghost" href="/bai-viet/">Xem tất cả bài viết</a>
     </div>
     <div class="cards">
-      {% for post in collections.posts | limit(6) %}{{ card(post, site.categories) }}{% endfor %}
+      {% for post in collections.posts | exceptCategory("Bản tin Y khoa") | limit(6) %}{{ card(post, site.categories) }}{% endfor %}
     </div>
   </div>
 </section>
+
+{% set banTin = collections.posts | byCategory("Bản tin Y khoa") | limit(3) %}
+{% if banTin.length %}
+<section id="ban-tin">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Bản tin Y khoa</p><h2 style="margin-top:.4rem">Bản tin mới nhất</h2><p>Tin mới từ Bộ Y tế, WHO và các hội sản phụ khoa, tóm tắt mỗi tuần và được bác sĩ duyệt.</p></div>
+      <a class="btn ghost" href="/chuyen-muc/ban-tin-y-khoa/">Xem tất cả bản tin</a>
+    </div>
+    <div class="cards">
+      {% for post in banTin %}{{ card(post, site.categories) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
 
 <section class="band">
   <div class="wrap">

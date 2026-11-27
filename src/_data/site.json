@@ -96,6 +96,10 @@
     {
       "name": "Hỏi đáp",
       "slug": "hoi-dap"
+    },
+    {
+      "name": "Bản tin Y khoa",
+      "slug": "ban-tin-y-khoa"
     }
   ],
   "videos": [

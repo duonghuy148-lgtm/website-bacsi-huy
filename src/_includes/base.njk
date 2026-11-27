@@ -7,6 +7,7 @@
 <meta name="description" content="{{ description or (site.doctorName + ', bác sĩ Sản phụ khoa tại ' + site.hospital + '. Theo dõi thai kỳ, tư vấn phẫu thuật phụ khoa, tư vấn online miễn phí.') }}">
 <meta name="theme-color" content="#138a78">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if isPreview %}<meta name="robots" content="noindex, nofollow">{% endif %}
 <meta property="og:title" content="{{ title or (site.doctorName + ' – ' + site.title) }}">
 <meta property="og:description" content="{{ description or site.hospital }}">
 <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">

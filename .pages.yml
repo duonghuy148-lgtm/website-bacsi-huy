@@ -29,13 +29,19 @@ content:
         label: Chuyên mục
         type: select
         options:
-          values: [Thai sản, Phẫu thuật phụ khoa, Phụ khoa, Hỏi đáp]
+          values: [Thai sản, Phẫu thuật phụ khoa, Phụ khoa, Hỏi đáp, Bản tin Y khoa]
       - name: date
         label: Ngày đăng
+        type: date
+      - name: updated
+        label: Ngày cập nhật (chỉ điền khi sửa lại bài cũ)
         type: date
       - name: image
         label: Ảnh đại diện bài viết (ngang, khoảng 1200×750)
         type: image
+      - name: tiktok
+        label: Link video TikTok (dán link video, web tự nhúng lên đầu bài)
+        type: string
       - name: draft
         label: Lưu nháp (chưa hiện trên web)
         type: boolean

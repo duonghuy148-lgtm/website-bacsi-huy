@@ -1,10 +1,15 @@
+// Bản xem trước: Cloudflare Pages build một nhánh khác main. Khi đó hiện cả bài nháp và bài hẹn ngày
+// để bác sĩ xem trước; web chính (nhánh main) vẫn ẩn chúng.
+const isPreview = !!process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== "main";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addGlobalData("isPreview", isPreview);
 
   eleventyConfig.addCollection("posts", (api) =>
     api
       .getFilteredByGlob("src/bai-viet/*.md")
-      .filter((p) => !p.data.draft && p.date <= new Date())
+      .filter((p) => isPreview || (!p.data.draft && p.date <= new Date()))
       .sort((a, b) => b.date - a.date)
   );
 
@@ -26,6 +31,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("catSlug", (name, cats) => (cats.find((c) => c.name === name) || {}).slug || "");
   eleventyConfig.addFilter("without", (posts, url) => posts.filter((p) => p.url !== url));
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
+  eleventyConfig.addFilter("exceptCategory", (posts, name) => posts.filter((p) => p.data.category !== name));
+  // Bài liên quan: ưu tiên cùng chuyên mục, thiếu thì lấy bài mới nhất
+  eleventyConfig.addFilter("related", (posts, url, category, n) => {
+    const others = posts.filter((p) => p.url !== url);
+    const same = others.filter((p) => p.data.category === category);
+    return [...same, ...others.filter((p) => p.data.category !== category)].slice(0, n);
+  });
+  // Lấy mã video từ link TikTok dạng https://www.tiktok.com/@kenh/video/1234567890
+  eleventyConfig.addFilter("tiktokId", (url) => (String(url || "").match(/\/video\/(\d+)/) || [])[1] || "");
 
   return {
     dir: { input: "src", output: "_site" },

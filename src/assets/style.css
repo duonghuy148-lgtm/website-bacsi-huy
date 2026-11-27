@@ -237,6 +237,13 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-block:
 .prose ul,.prose ol{padding-left:1.3rem}
 .prose li+li{margin-top:.35rem}
 .prose table{margin-top:1rem}
+.author-box{margin-top:2.4rem;display:flex;gap:1rem;align-items:center;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.author-box p{margin:0}
+.author-box a{color:var(--ink);text-decoration:none}
+.author-box a:hover{color:var(--accent)}
+.author-box+.post-cta{margin-top:1.2rem}
+.tiktok-wrap{margin-top:1.4rem;display:flex;justify-content:center}
+.tiktok-wrap .tiktok-embed{margin:0;max-width:605px;min-width:0;width:100%}
 .post-cta{margin-top:2.4rem;padding:1.4rem;border-radius:14px;background:var(--accent-soft);display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
 .post-cta p{flex:1 1 260px}
 .post-cta div{display:flex;flex-wrap:wrap;gap:.6rem}

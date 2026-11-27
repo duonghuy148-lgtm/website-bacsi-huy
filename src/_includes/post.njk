@@ -3,6 +3,9 @@ layout: base.njk
 ---
 {% from "card.njk" import card %}
 {% set slug = category | catSlug(site.categories) %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalWebPage","headline":{{ title | dump | safe }},"description":{{ (description or "") | dump | safe }},"inLanguage":"vi","url":{{ (site.url + page.url) | dump | safe }},"datePublished":"{{ page.date | isoDate }}","dateModified":"{{ (updated or page.date) | isoDate }}","lastReviewed":"{{ (updated or page.date) | isoDate }}","author":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ (site.url + "/#gioi-thieu") | dump | safe }}},"reviewedBy":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ (site.url + "/#gioi-thieu") | dump | safe }}},"publisher":{"@type":"Physician","name":{{ site.doctorName | dump | safe }},"url":{{ site.url | dump | safe }}}}
+</script>
 <section class="article">
   <div class="wrap post-layout">
     <div style="min-width:0">
@@ -11,16 +14,30 @@ layout: base.njk
       <div class="meta"><span>{{ site.doctorName }}</span><span><time datetime="{{ page.date | isoDate }}">{{ page.date | ngay }}</time></span><span>{{ content | readingTime }} phút đọc</span></div>
       {% if image %}<div class="hero-img"><img src="{{ image }}" alt=""></div>{% endif %}
       {% if sample %}<p class="ph-box">Bài mẫu do trợ lý soạn, bác sĩ cần đọc duyệt và sửa trước khi công bố chính thức.</p>{% endif %}
+      {% if isPreview and draft %}<p class="ph-box">Bản nháp chờ bác sĩ duyệt. Trang này chỉ hiện ở link xem trước, chưa có trên web chính.</p>
+      {% elif isPreview and isScheduled %}<p class="ph-box">Đã duyệt, hẹn lên web ngày {{ page.date | ngay }}.</p>{% endif %}
+      {% if tiktok %}{% set vid = tiktok | tiktokId %}
+      <div class="tiktok-wrap">{% if vid %}<blockquote class="tiktok-embed" cite="{{ tiktok }}" data-video-id="{{ vid }}"><section><a target="_blank" rel="noopener" href="{{ tiktok }}">Xem video của bác sĩ trên TikTok</a></section></blockquote><script async src="https://www.tiktok.com/embed.js"></script>{% else %}<a class="btn ghost" target="_blank" rel="noopener" href="{{ tiktok }}">Xem video của bác sĩ trên TikTok</a>{% endif %}</div>
+      {% endif %}
       <nav class="toc" id="toc" aria-label="Xem nhanh"><b>Xem nhanh</b><ol></ol></nav>
       <div class="prose">
         {{ content | safe }}
       </div>
+      <aside class="author-box" aria-label="Bác sĩ duyệt nội dung">
+        <span class="mark" aria-hidden="true">MH</span>
+        <div>
+          <p class="small">Bác sĩ duyệt nội dung</p>
+          <p><a href="/#gioi-thieu"><b>{{ site.doctorName }}</b></a></p>
+          <p class="small">{{ site.title }} · {{ site.hospital }}</p>
+          <p class="small">Đăng ngày {{ page.date | ngay }}{% if updated %} · Cập nhật ngày {{ updated | ngay }}{% endif %}</p>
+        </div>
+      </aside>
       <aside class="post-cta">
         <p><strong>Bác sĩ tư vấn miễn phí qua số điện thoại {{ site.phone }}.</strong> Bác sĩ khám và phẫu thuật tại {{ site.hospital }}.</p>
         <div><a class="btn" href="/#dat-lich">Đăng ký khám</a><a class="btn zalo-btn" href="{% if site.zalo %}https://zalo.me/{{ site.zalo }}{% else %}/#dat-lich{% endif %}">Nhắn Zalo {{ site.phone }}</a></div>
       </aside>
       <p class="small" style="margin-top:1.4rem">Bài viết mang tính tham khảo, không thay thế việc thăm khám trực tiếp. Khi có dấu hiệu bất thường như ra máu nhiều, đau bụng dữ dội, hãy đến cơ sở y tế gần nhất hoặc gọi 115.</p>
-      {% set rel = collections.posts | without(page.url) | limit(3) %}
+      {% set rel = collections.posts | related(page.url, category, 3) %}
       {% if rel.length %}
       <div class="related"><h2 style="font-size:1.4rem;margin-bottom:1.2rem">Bài viết liên quan</h2>
         <div class="cards">{% for p in rel %}{{ card(p, site.categories) }}{% endfor %}</div>
