@@ -263,3 +263,4 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-block:
 .choice h4{margin:0;font:600 1.1rem var(--display)}
 .choice p:not(.eyebrow){color:var(--muted);font-size:.94rem}
 .choice .btn{margin-top:.3rem;white-space:normal}
+.float .f-fb{background:#1877f2;font:700 1.4rem Arial,sans-serif}

@@ -165,6 +165,7 @@ layout: base.njk
         {% for t in site.timeline %}<li><b>{{ t.year | ph | safe }}</b><span>{{ t.text | ph | safe }}{% if t.link %} · <a href="{{ t.link }}" target="_blank" rel="noopener">{{ t.linkText }}</a>{% endif %}</span></li>
         {% endfor %}
       </ul>
+      {% if site.facebook %}<p><a class="btn ghost sm" href="{{ site.facebook }}" target="_blank" rel="noopener">Theo dõi bác sĩ trên Facebook</a></p>{% endif %}
       {% if site.awards %}<div class="awards"><b>Khen thưởng</b><ul>{% for a in site.awards %}<li>{{ a }}</li>{% endfor %}</ul></div>{% endif %}
     </div>
   </div>

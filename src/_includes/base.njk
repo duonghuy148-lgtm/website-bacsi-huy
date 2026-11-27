@@ -29,6 +29,7 @@
     </div>
     <div class="left">
       {% if site.hoursConfirmed %}<span class="status" id="openStatus" data-hours='{{ site.hours | dump }}'><i></i><span>Giờ khám hôm nay</span></span>{% endif %}
+      {% if site.facebook %}<a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
       <a href="{{ zaloHref }}">Nhắn Zalo phòng khám</a>
     </div>
   </div>
@@ -71,7 +72,7 @@
       </div>
       <div><h4>Chuyên mục</h4><ul>{% for c in site.categories %}<li><a href="/chuyen-muc/{{ c.slug }}/">{{ c.name }}</a></li>{% endfor %}</ul></div>
       <div><h4>Liên kết nhanh</h4><ul><li><a href="/#dat-lich">Đăng ký khám</a></li><li><a href="/#cong-cu">Tính ngày dự sinh</a></li><li><a href="/#cong-cu">Tính ngày rụng trứng</a></li><li><a href="/bai-viet/">Tất cả bài viết</a></li></ul></div>
-      <div><h4>Liên hệ</h4><ul><li>{{ site.clinicName | ph | safe }}</li><li>{{ site.clinicAddress | ph | safe }}</li><li>Hotline/Zalo: {{ site.phone | ph | safe }}</li><li>{{ site.email | ph | safe }}</li></ul></div>
+      <div><h4>Liên hệ</h4><ul><li>{{ site.clinicName | ph | safe }}</li><li>{{ site.clinicAddress | ph | safe }}</li><li>Hotline/Zalo: {{ site.phone | ph | safe }}</li>{% if site.facebook %}<li><a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook bác sĩ</a></li>{% endif %}{% if site.tiktok %}<li><a href="{{ site.tiktok }}" target="_blank" rel="noopener">TikTok {{ site.tiktokHandle }}</a></li>{% endif %}</ul></div>
     </div>
     <div class="legal">
       <p>Thông tin trên website mang tính tham khảo, không thay thế cho việc thăm khám và chẩn đoán trực tiếp. Kết quả điều trị phụ thuộc vào tình trạng của từng người.</p>
@@ -82,6 +83,7 @@
 
 <div class="float" aria-label="Liên hệ nhanh">
   <a class="f-book" href="{{ site.clinicBookingUrl or '/#dat-lich' }}" target="_blank" rel="noopener">Đặt lịch</a>
+  {% if site.facebook %}<a class="f-fb" href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="Facebook bác sĩ">f</a>{% endif %}
   <a class="f-zalo" href="{{ zaloHref }}" {% if site.zalo %}target="_blank" rel="noopener"{% endif %} aria-label="Nhắn Zalo">Zalo</a>
   <a class="f-call" href="/#dat-lich" data-tel="{{ site.phone }}" aria-label="Gọi điện"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
 </div>
