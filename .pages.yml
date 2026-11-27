@@ -39,6 +39,12 @@ content:
       - name: image
         label: Ảnh đại diện bài viết (ngang, khoảng 1200×750)
         type: image
+      - name: imageAlt
+        label: Mô tả ảnh (cho người khiếm thị và Google)
+        type: string
+      - name: imageCredit
+        label: Nguồn ảnh (ghi khi lấy từ kho ảnh miễn phí)
+        type: string
       - name: tiktok
         label: Link video TikTok (dán link video, web tự nhúng lên đầu bài)
         type: string

@@ -223,7 +223,9 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-block:
 .post-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:3rem;align-items:start}
 .article h1{font-size:clamp(1.8rem,4.2vw,2.5rem);margin-top:.8rem}
 .article .meta{margin-top:.7rem;font-size:.86rem}
-.article .hero-img{margin-top:1.4rem;border-radius:16px;overflow:hidden}
+.article .hero-img{margin:1.4rem 0 0}
+.article .hero-img img{display:block;width:100%;border-radius:16px}
+.article .hero-img figcaption{font-size:.78rem;color:var(--muted);margin-top:.35rem}
 .ph-box{background:var(--rose-soft);color:var(--rose);border-radius:10px;padding:.8rem 1rem;font-size:.92rem;margin-top:1.2rem}
 .toc{margin-top:1.6rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem}
 .toc b{font-size:.9rem}

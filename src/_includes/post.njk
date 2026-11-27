@@ -12,7 +12,7 @@ layout: base.njk
       <nav class="crumb" aria-label="Đường dẫn"><a href="/">Trang chủ</a><span>›</span><a href="/chuyen-muc/{{ slug }}/">{{ category }}</a></nav>
       <h1>{{ title }}</h1>
       <div class="meta"><span>{{ site.doctorName }}</span><span><time datetime="{{ page.date | isoDate }}">{{ page.date | ngay }}</time></span><span>{{ content | readingTime }} phút đọc</span></div>
-      {% if image %}<div class="hero-img"><img src="{{ image }}" alt=""></div>{% endif %}
+      {% if image %}<figure class="hero-img"><img src="{{ image }}" alt="{{ imageAlt or title }}">{% if imageCredit %}<figcaption>Ảnh: {{ imageCredit }}</figcaption>{% endif %}</figure>{% endif %}
       {% if sample %}<p class="ph-box">Bài mẫu do trợ lý soạn, bác sĩ cần đọc duyệt và sửa trước khi công bố chính thức.</p>{% endif %}
       {% if isPreview and draft %}<p class="ph-box">Bản nháp chờ bác sĩ duyệt. Trang này chỉ hiện ở link xem trước, chưa có trên web chính.</p>
       {% elif isPreview and isScheduled %}<p class="ph-box">Đã duyệt, hẹn lên web ngày {{ page.date | ngay }}.</p>{% endif %}
