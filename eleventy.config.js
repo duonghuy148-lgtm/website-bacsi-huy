@@ -4,7 +4,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("posts", (api) =>
     api
       .getFilteredByGlob("src/bai-viet/*.md")
-      .filter((p) => !p.data.draft)
+      .filter((p) => !p.data.draft && p.date <= new Date())
       .sort((a, b) => b.date - a.date)
   );
 

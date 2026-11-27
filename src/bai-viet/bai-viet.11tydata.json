@@ -1,4 +1,0 @@
-{
-  "layout": "post.njk",
-  "permalink": "/bai-viet/{{ page.fileSlug }}/"
-}
